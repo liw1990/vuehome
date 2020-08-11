@@ -101,7 +101,7 @@
 				$.ajax({
 		            url: 'http://wap.yjydg.com/json/json.php',
 		            type: 'get',
-		        }).then(function (res) {
+		        }).then(res => {
 		        	//console.log(res)
 		            //console.log(JSON.parse(res));
 		            const data = JSON.parse(res)
@@ -111,7 +111,7 @@
 		            that.customerCount = data[1].customer.length
 		            that.userCount = data[2].user.length
 		            //console.log(that.user,that.userCount,that.customerCount)
-		        }).fail(function () {
+		        }).fail(()=> {
 		            console.log('失败');
 		        })
 			},

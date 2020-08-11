@@ -248,7 +248,6 @@
 				}
 			},
 			search(){
-				console.log()
 				var that = this
 				$.ajax({
 		            url: 'http://wap.yjydg.com/json/json.php',
@@ -261,11 +260,13 @@
 		            var arr=[]
 		            for(var i=0;i<that.customer.length;i++){
 		            	if(that.searchTxt == that.customer[i].name){
-		            		console.log(that.customer[i])
+		            		//console.log(that.customer[i])
+		            		arr.push(that.customer[i])
 		            	} 
 		            }
+		            that.customer = arr
 		            //console.log(that.customer)
-		            that.ulHeight = data[1].customer.length * 50  + 50 + "px"
+		            that.ulHeight = arr.length * 50  + 50 + "px"
 		        }).fail(function () {
 		            console.log('失败');
 		        })
