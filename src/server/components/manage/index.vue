@@ -8,7 +8,10 @@
 		<div class="manage-item">
 			<div class="manage-btn">
 				<p @click="addPageShow()">添加</p>
-				<div class="search"><input type="text" placeholder="请输入你想查询的姓名" v-model="searchTxt" /><label @click="search()">搜索</label></div>
+				<div class="search">
+					<input type="text" placeholder="请输入你想查询的姓名" v-model="searchTxt" @keyup.enter="enterKey" />
+					<label @click="search()">搜索</label>
+				</div>
 			</div>
 			<div v-show="addPage" class="add">
 				<div class="add_">
@@ -247,6 +250,9 @@
 					this.boxShadow = 3
 				}
 			},
+			enterKey() {
+				this.search();
+		    },
 			search(){
 				var that = this
 				$.ajax({
