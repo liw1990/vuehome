@@ -264,11 +264,15 @@
 		            //console.log(data[1].customer)
 		            that.customer = data[1].customer
 		            var arr=[]
-		            for(var i=0;i<that.customer.length;i++){
-		            	if(that.searchTxt == that.customer[i].name){
-		            		//console.log(that.customer[i])
-		            		arr.push(that.customer[i])
-		            	} 
+		            if(that.searchTxt == ''){
+		            	arr = data[1].customer
+		            }else{
+		            	for(var i=0;i<that.customer.length;i++){
+			            	if(that.searchTxt == that.customer[i].name){
+			            		//console.log(that.customer[i])
+			            		arr.push(that.customer[i])
+			            	}
+			            }
 		            }
 		            that.customer = arr
 		            //console.log(that.customer)
